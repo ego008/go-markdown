@@ -13,7 +13,7 @@
 
 package markdown
 
-func parseLinkLabel(s *stateInline, start int, disableNested bool) int { //XXX get rid of s param
+func parseLinkLabel(s *stateInline, start int, disableNested bool) int {
 	src := s.src
 	labelEnd := -1
 	max := s.posMax
