@@ -18,7 +18,7 @@ type example struct {
 	Section  string
 }
 
-func LoadExamplesFromJSON(fn string) []example {
+func loadExamplesFromJSON(fn string) []example {
 	f, err := os.Open(fn)
 	if err != nil {
 		panic(err)
@@ -44,7 +44,7 @@ func render(src string, options ...option) (_ string, err error) {
 }
 
 func TestCommonMark019(t *testing.T) {
-	examples := LoadExamplesFromJSON("spec/commonmark-0.19.json")
+	examples := loadExamplesFromJSON("spec/commonmark-0.19.json")
 	for _, ex := range examples {
 		result, err := render(ex.Markdown, HTML(true), XHTMLOutput(true), Linkify(false), Typographer(false), LangPrefix("language-"))
 		if err != nil {
