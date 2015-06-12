@@ -45,7 +45,7 @@ The following options are currently supported:
   MaxNesting      | int    | maximum block nesting level                                 | 20
   LangPrefix      | string | CSS language prefix for fenced blocks                       | language-
   Breaks          | bool   | whether to convert newlines inside paragraphs into `<br>`   | false
-  Nofollow        | bool   | whether to add `rel="nofollow"` to links                      | false
+  Nofollow        | bool   | whether to add `rel="nofollow"` to links                    | false
   XHTMLOutput     | bool   | whether to output XHTML instead of HTML                     | false
 
 ## Benchmarks
@@ -55,6 +55,11 @@ Rendering spec/spec-0.19.txt on a Intel(R) Core(TM) i5-2400 CPU @ 3.10GHz
     BenchmarkRenderSpec019NoHTML     200           6116606 ns/op         2921682 B/op       7929 allocs/op
     BenchmarkRenderSpec019           100          15744611 ns/op         4851484 B/op      41032 allocs/op
     BenchmarkRenderSpecBlackFriday   200           7450171 ns/op         2722858 B/op      36689 allocs/op
+
+## TODO
+
+  * Improve performance with the raw HTML option enabled
+  * Write an URL parser/encoder that would support decoding punycode and counting matching `[(` and `)]` in URLs
 
 ## License
 
