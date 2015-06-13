@@ -95,6 +95,9 @@ func (s *stateBlock) lines(begin, end, indent int, keepLastLf bool) string {
 	}
 
 	size := 0
+	var firstFirst int
+	var previousLast int
+	adjoin := true
 	for line := begin; line < end; line++ {
 		shift := s.tShift[line]
 		if shift < 0 {
@@ -102,11 +105,22 @@ func (s *stateBlock) lines(begin, end, indent int, keepLastLf bool) string {
 		} else if shift > indent {
 			shift = indent
 		}
+		first := s.bMarks[line] + shift
 		last := s.eMarks[line]
-		size += last - s.bMarks[line] - shift
 		if line+1 < end || (keepLastLf && last < len(src)) {
-			size++
+			last++
 		}
+		size += last - first
+		if line == begin {
+			firstFirst = first
+		} else if previousLast != first {
+			adjoin = false
+		}
+		previousLast = last
+	}
+
+	if adjoin {
+		return src[firstFirst:previousLast]
 	}
 
 	buf := make([]byte, size)
