@@ -42,7 +42,7 @@ The following options are currently supported:
   Linkify         | bool   | whether to autoconvert plain-text URLs to links             | true
   Typographer     | bool   | whether to enable typographic replacements                  | true
   Quotes          | string | double + single quote replacement pairs for the typographer | “”‘’
-  MaxNesting      | int    | maximum block nesting level                                 | 20
+  MaxNesting      | int    | maximum nesting level                                       | 20
   LangPrefix      | string | CSS language prefix for fenced blocks                       | language-
   Breaks          | bool   | whether to convert newlines inside paragraphs into `<br>`   | false
   Nofollow        | bool   | whether to add `rel="nofollow"` to links                    | false
