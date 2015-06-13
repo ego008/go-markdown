@@ -61,25 +61,33 @@ var badProtos = []string{"file", "javascript", "vbscript"}
 
 var rGoodData = regexp.MustCompile(`^data:image/(gif|png|jpeg|webp);`)
 
-func trimSpecialLeft(s string) string {
+func removeSpecial(s string) string {
 	i := 0
-	for i < len(s) && (s[i] < 0x20 || s[i] == 0x7f) {
+	for i < len(s) && !(s[i] <= 0x20 || s[i] == 0x7f) {
 		i++
 	}
-	if i == 0 {
+	if i >= len(s) {
 		return s
 	}
-	return s[i:]
+	buf := make([]byte, len(s))
+	j := 0
+	for i := 0; i < len(s); i++ {
+		if !(s[i] <= 0x20 || s[i] == 0x7f) {
+			buf[j] = s[i]
+			j++
+		}
+	}
+	return string(buf[:j])
 }
 
 func validateLink(url string) bool {
 	str := html.ReplaceEntities(url)
 	str = strings.TrimSpace(str)
-	str = trimSpecialLeft(str)
 	str = strings.ToLower(str)
 
 	if strings.IndexByte(str, ':') >= 0 {
 		proto := strings.SplitN(str, ":", 2)[0]
+		proto = removeSpecial(proto)
 		for _, p := range badProtos {
 			if proto == p {
 				return false
