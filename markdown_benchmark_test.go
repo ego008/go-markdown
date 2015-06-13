@@ -9,7 +9,7 @@ import (
 
 func BenchmarkRenderSpec019NoHTML(b *testing.B) {
 	b.StopTimer()
-	data, err := ioutil.ReadFile("spec/spec-0.19.txt")
+	data, err := ioutil.ReadFile("spec/spec-0.20.txt")
 	if err != nil {
 		b.Fatal(err)
 	}
@@ -24,7 +24,7 @@ func BenchmarkRenderSpec019NoHTML(b *testing.B) {
 
 func BenchmarkRenderSpec019(b *testing.B) {
 	b.StopTimer()
-	data, err := ioutil.ReadFile("spec/spec-0.19.txt")
+	data, err := ioutil.ReadFile("spec/spec-0.20.txt")
 	if err != nil {
 		b.Fatal(err)
 	}
@@ -39,7 +39,7 @@ func BenchmarkRenderSpec019(b *testing.B) {
 
 func BenchmarkRenderSpecBlackFriday(b *testing.B) {
 	b.StopTimer()
-	data, err := ioutil.ReadFile("spec/spec-0.19.txt")
+	data, err := ioutil.ReadFile("spec/spec-0.20.txt")
 	if err != nil {
 		panic(err)
 	}

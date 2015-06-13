@@ -13,7 +13,7 @@ You can also go get [mdtool](https://github.com/opennota/mdtool), an example com
 
 ## Standards support
 
-Currently supported CommonMark spec: [v0.19](http://spec.commonmark.org/0.19/).
+Currently supported CommonMark spec: [v0.20](http://spec.commonmark.org/0.20/).
 
 ## Extensions
 
@@ -50,11 +50,10 @@ The following options are currently supported:
 
 ## Benchmarks
 
-Rendering spec/spec-0.19.txt on a Intel(R) Core(TM) i5-2400 CPU @ 3.10GHz
-
-    BenchmarkRenderSpec019NoHTML     200           6116606 ns/op         2921682 B/op       7929 allocs/op
-    BenchmarkRenderSpec019           100          15744611 ns/op         4851484 B/op      41032 allocs/op
-    BenchmarkRenderSpecBlackFriday   200           7450171 ns/op         2722858 B/op      36689 allocs/op
+Rendering spec/spec-0.20.txt on a Intel(R) Core(TM) i5-2400 CPU @ 3.10GHz
+    BenchmarkRenderSpec019NoHTML      200     6285825 ns/op    2946110 B/op     8207 allocs/op
+    BenchmarkRenderSpec019            100    15764980 ns/op    4879226 B/op    41539 allocs/op
+    BenchmarkRenderSpecBlackFriday    200     7667491 ns/op    2750367 B/op    37247 allocs/op
 
 ## TODO
 
