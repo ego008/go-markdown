@@ -7,7 +7,7 @@ import (
 	"github.com/russross/blackfriday"
 )
 
-func BenchmarkRenderSpec019NoHTML(b *testing.B) {
+func BenchmarkRenderSpecNoHTML(b *testing.B) {
 	b.StopTimer()
 	data, err := ioutil.ReadFile("spec/spec-0.20.txt")
 	if err != nil {
@@ -22,7 +22,7 @@ func BenchmarkRenderSpec019NoHTML(b *testing.B) {
 	}
 }
 
-func BenchmarkRenderSpec019(b *testing.B) {
+func BenchmarkRenderSpec(b *testing.B) {
 	b.StopTimer()
 	data, err := ioutil.ReadFile("spec/spec-0.20.txt")
 	if err != nil {

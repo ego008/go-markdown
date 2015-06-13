@@ -43,7 +43,7 @@ func render(src string, options ...option) (_ string, err error) {
 	return md.RenderToString([]byte(src)), nil
 }
 
-func TestCommonMark019(t *testing.T) {
+func TestCommonMark(t *testing.T) {
 	examples := loadExamplesFromJSON("spec/commonmark-0.20.json")
 	for _, ex := range examples {
 		result, err := render(ex.Markdown, HTML(true), XHTMLOutput(true), Linkify(false), Typographer(false), LangPrefix("language-"))
