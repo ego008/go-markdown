@@ -51,6 +51,7 @@ The following options are currently supported:
 ## Benchmarks
 
 Rendering spec/spec-0.20.txt on a Intel(R) Core(TM) i5-2400 CPU @ 3.10GHz
+
     BenchmarkRenderSpec019NoHTML      200     6285825 ns/op    2946110 B/op     8207 allocs/op
     BenchmarkRenderSpec019            100    15764980 ns/op    4879226 B/op    41539 allocs/op
     BenchmarkRenderSpecBlackFriday    200     7667491 ns/op    2750367 B/op    37247 allocs/op
