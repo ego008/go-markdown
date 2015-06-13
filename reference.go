@@ -136,11 +136,15 @@ outer:
 		return
 	}
 
+	label := normalizeReference(str[1:labelEnd])
+	if label == "" {
+		return false
+	}
+
 	if silent {
 		return true
 	}
 
-	label := normalizeReference(str[1:labelEnd])
 	if s.env.References == nil {
 		s.env.References = make(map[string]map[string]string)
 	}
